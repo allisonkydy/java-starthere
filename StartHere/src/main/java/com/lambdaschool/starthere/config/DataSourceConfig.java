@@ -16,6 +16,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
+// allows us to switch between H2 and PostgreSQL
+
 @Configuration
 public class DataSourceConfig
 {
@@ -44,8 +46,10 @@ public class DataSourceConfig
         String myDBUser = "";
         String myDBPassword = "";
 
+        // read an environment variable from application properties
         String dbValue = env.getProperty("local.run.db");
 
+        // if it says PostgreSQL, use PostgreSQL
         if (dbValue.equalsIgnoreCase("POSTGRESQL"))
         {
             checkEnvironmentVariable("MYDBHOST");
@@ -68,8 +72,9 @@ public class DataSourceConfig
         } else
         {
             // Assumes H2
+            // must set up manually now since we're overriding Spring's defaults
             myUrlString = "jdbc:h2:mem:testdb";
-            myDriverClass = "org.h2.Driver";
+            myDriverClass = "org.h2.Driver"; // standard Driver name: org.dbname.Driver
             myDBUser = "sa";
             myDBPassword = "";
         }

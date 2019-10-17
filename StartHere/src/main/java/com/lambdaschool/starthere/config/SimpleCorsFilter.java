@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// CORS -- allows remote clients access to our sever
+    // Cross Origin Resource Sharing -- multiple systems can access each other
+// Simple Cors Filter
+    // set up so anyone can access it -- system is not restricted at network level
+    // can restrict IP address, methods, etc
+
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class SimpleCorsFilter implements Filter

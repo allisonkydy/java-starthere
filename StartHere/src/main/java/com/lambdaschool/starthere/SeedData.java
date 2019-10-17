@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Locale;
 
+// comment out these annotations in production if you don't want seed data to be loaded
+    // Spring will not know this file exists
 @Transactional
 @Component
 public class SeedData implements CommandLineRunner

@@ -162,6 +162,8 @@ public class UserController
                                     HttpStatus.OK);
     }
 
+    // allows client to send token to get information about the current user
+    // must send in authentication token with the request
     // http://localhost:2019/users/getuserinfo
     @GetMapping(value = "/getuserinfo",
                 produces = {"application/json"})

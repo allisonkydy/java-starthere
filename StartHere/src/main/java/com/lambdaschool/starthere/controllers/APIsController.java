@@ -28,6 +28,8 @@ import java.util.Map;
  * > sending something via twilio from an endpoint (in progress)
  */
 
+// allows us to get data from other APIs into our system
+
 @Loggable
 @RestController
 @RequestMapping("/otherapis")
@@ -51,8 +53,10 @@ public class APIsController
         logger.trace(request.getMethod()
                             .toUpperCase() + " " + request.getRequestURI() + " accessed");
 
+        // request data from another API
         String requestURL = "https://openlibrary.org/api/books?bibkeys=" + "ISBN:" + isbn + "&format=json";
 
+        // data comes back as a map -- must set it up as responseType
         ParameterizedTypeReference<Map<String, APIOpenLibrary>> responseType = new ParameterizedTypeReference<Map<String, APIOpenLibrary>>()
         {
         };
@@ -60,7 +64,7 @@ public class APIsController
                                                                                            HttpMethod.GET,
                                                                                            null,
                                                                                            responseType);
-
+        // pulls data out of the response
         Map<String, APIOpenLibrary> ourBooks = responseEntity.getBody();
 
         System.out.println(ourBooks);

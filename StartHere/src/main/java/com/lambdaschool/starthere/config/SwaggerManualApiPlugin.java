@@ -22,6 +22,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+// Login link ignored by Swagger
+    // this file manually documents login endpoint in swagger
+    // not required, but necessary if you want documentation for logging in on swagger
+
 @Component
 @Order(SwaggerPluginSupport.SWAGGER_PLUGIN_ORDER)
 public class SwaggerManualApiPlugin implements ApiListingScannerPlugin

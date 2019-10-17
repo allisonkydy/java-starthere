@@ -60,6 +60,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
         http.headers()
             .frameOptions()
             .disable();
+        // turns off spring's automatic logout feature
+            // instead of jumping through spring's hoops, we just remove the token from the token store
         http.logout()
             .disable();
     }

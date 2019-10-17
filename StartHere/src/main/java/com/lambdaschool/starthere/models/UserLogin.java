@@ -2,6 +2,9 @@ package com.lambdaschool.starthere.models;
 
 import com.lambdaschool.starthere.logging.Loggable;
 
+// for manual documentation in SwaggerManualApiPlugin
+// used so that custom swagger documentation reflects exactly what is needed to login to the server
+
 @Loggable
 public class UserLogin
 {

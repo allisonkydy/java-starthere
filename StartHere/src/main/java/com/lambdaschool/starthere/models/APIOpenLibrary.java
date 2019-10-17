@@ -2,6 +2,8 @@ package com.lambdaschool.starthere.models;
 
 import com.lambdaschool.starthere.logging.Loggable;
 
+// creates a model to hold the data that comes back from another API
+
 @Loggable
 // Taken from the output of https://openlibrary.org/api/books?bibkeys=ISBN:0982477562&format=json
 // This class must match the JSON object

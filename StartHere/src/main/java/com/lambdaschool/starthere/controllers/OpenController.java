@@ -41,6 +41,7 @@ public class OpenController
     // Just create the user
     // http://localhost:2019/createnewuser?access=false
     //
+    // request body:
     // {
     //     "username" : "Mojo",
     //     "password" : "corgie",
@@ -69,6 +70,7 @@ public class OpenController
 
         ArrayList<UserRoles> newRoles = new ArrayList<>();
         newRoles.add(new UserRoles(newuser,
+                                   // default role: user -- can change if necessary
                                    roleService.findByName("user")));
         newuser.setUserroles(newRoles);
 
@@ -82,6 +84,8 @@ public class OpenController
         responseHeaders.setLocation(newUserURI);
 
         String theToken = "";
+        // this allows the user to create a new user and login in the same step
+            // calls the login endpoint and returns the token -> TokenModel
         if (getaccess)
         {
             // return the access token

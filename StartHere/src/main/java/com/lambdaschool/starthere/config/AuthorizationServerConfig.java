@@ -14,6 +14,9 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter
 {
+    // pushed client id/client secret into environment variables for security purposes
+        // code is readable by anyone when pushed to github
+        // environment variables are only accessible from your local machine
     static final String CLIENT_ID = System.getenv("OAUTHCLIENTID"); // read from environment variable
     static final String CLIENT_SECRET = System.getenv("OAUTHCLIENTSECRET"); // read from environment variable
     // static final String CLIENT_ID = "lambda-client";

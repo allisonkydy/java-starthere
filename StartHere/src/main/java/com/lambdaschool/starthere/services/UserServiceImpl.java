@@ -22,6 +22,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+// read through thoroughly -- enough to explain what it's doing to someone else (or a rubber duck)
+
 @Loggable
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService,

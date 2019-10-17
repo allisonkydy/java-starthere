@@ -2,6 +2,9 @@ package com.lambdaschool.starthere.models;
 
 import com.lambdaschool.starthere.logging.Loggable;
 
+// minimum data needed to create a user
+// allows Spring to convert JSON to java object in OpenController
+
 @Loggable
 public class UserMinimum
 {

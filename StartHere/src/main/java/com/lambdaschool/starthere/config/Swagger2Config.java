@@ -41,9 +41,11 @@ public class Swagger2Config
                                                       .ignoredParameterTypes(Pageable.class) // allows only my paging parameter list
                                                       .apiInfo(apiEndPointsInfo())
                                                       .pathMapping("/")
+                                // forces swagger to show given models
                                                       .additionalModels(resolver.resolve(APIOpenLibrary.class),
                                                                         resolver.resolve(TokenModel.class),
                                                                         resolver.resolve(ErrorDetail.class))
+                                // specify models that we want swagger doc to ignore
                                                       .ignoredParameterTypes(SimpleGrantedAuthority.class);
     }
 
